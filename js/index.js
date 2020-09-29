@@ -27,3 +27,32 @@ const begone = document.querySelector(".intro");
 begone.addEventListener("dblclick", (event) => {
   begone.removeChild(begone.childNodes[0]);
 });
+
+const background = document.querySelector(".content-pick");
+
+background.addEventListener("wheel", (event) => {
+  background.style.background = "red";
+});
+
+const oops = document.querySelector("body");
+oops.addEventListener("keydown", (event) => {
+  oops.style.background = "blue";
+});
+oops.addEventListener("keyup", (event) => {
+  oops.style.background = "yellow";
+});
+oops.addEventListener("click", (event) => {
+  oops.style.background = "green";
+});
+const stopprop = document.querySelector(".content-section");
+
+stopprop.addEventListener("click", (event) => {
+  stopprop.style.background = "orange";
+  event.stopPropagation();
+});
+
+document.querySelectorAll("a").forEach((link) =>
+  link.addEventListener("click", (event) => {
+    event.preventDefault();
+  })
+);
